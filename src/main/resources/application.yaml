@@ -1,0 +1,41 @@
+server:
+  port: 8084
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fast_food
+    username: postgres
+    password: 690
+  application:
+    name: BRANCH-SERVICE
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  sql:
+    init:
+      mode: always
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+#  cache:
+#    type: redis
+#    cache-names: "users"
+#    redis:
+#      cache-null-values: true
+#      key-prefix: cache_
+#      use-key-prefix: true
+#      enable-statistics: true
+#  redis:
+#    host: localhost
+#    port: 6379
+    #    password: 13205
+
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+
