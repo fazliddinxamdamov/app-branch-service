@@ -1,6 +1,8 @@
 package com.fazliddin.appbranchservice.controller;
 
+import com.fazliddin.appbranchservice.utils.AppConstants;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -10,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
+@RequestMapping(TestController.PATH)
+public interface TestController {
 
-public class TestController {
+   String PATH = AppConstants.BASE_PATH;
 
-    @GetMapping("/api/auth/branch")
-    public String testController(){
-        return "Branch service test controller";
-    }
+    @GetMapping("/test")
+    public String testController();
 }
