@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(TestController.PATH)
 public interface TestController {
-
    String PATH = AppConstants.BASE_PATH;
 
     @GetMapping("/test")

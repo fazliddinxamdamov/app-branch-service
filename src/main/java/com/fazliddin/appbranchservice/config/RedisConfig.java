@@ -23,9 +23,7 @@ import java.time.Duration;
 @EnableCaching
 @RequiredArgsConstructor
 public class RedisConfig {
-
     private final RedisProperties redisProperties;
-
     @Bean
     public LettuceConnectionFactory lettuceConnectionFactory() {
         RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration();
@@ -33,7 +31,6 @@ public class RedisConfig {
         configuration.setPort(redisProperties.getPort());
         return new LettuceConnectionFactory(configuration);
     }
-
     @Bean(name = "redisTemplate")
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
         RedisSerializer<Object> genericJackson2JsonRedisSerializer = new GenericJackson2JsonRedisSerializer();
