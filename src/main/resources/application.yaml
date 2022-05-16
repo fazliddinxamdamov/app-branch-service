@@ -5,16 +5,16 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/fast_food
     username: postgres
-    password: 690
+    password: root123
   application:
     name: BRANCH-SERVICE
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
   sql:
     init:
-      mode: always
+      mode: never
   servlet:
     multipart:
       max-file-size: 5MB

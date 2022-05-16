@@ -1,17 +1,17 @@
 package com.fazliddin.appbranchservice.service;
 
-import ai.ecma.appbranchservice.common.MessageService;
-import ai.ecma.appbranchservice.exception.RestException;
-import ai.ecma.appbranchservice.mapper.BranchScheduleMapper;
-import ai.ecma.lib.entity.Branch;
-import ai.ecma.lib.entity.BranchSchedule;
-import ai.ecma.lib.enums.WeekdaysNameEnum;
-import ai.ecma.lib.payload.ApiResult;
-import ai.ecma.lib.payload.CustomPage;
-import ai.ecma.lib.payload.req.BranchScheduleReqDto;
-import ai.ecma.lib.payload.resp.BranchScheduleRespDto;
-import ai.ecma.lib.repository.BranchRepository;
-import ai.ecma.lib.repository.BranchScheduleRepository;
+import com.fazliddin.appbranchservice.common.MessageService;
+import com.fazliddin.appbranchservice.exception.RestException;
+import com.fazliddin.appbranchservice.mapper.BranchScheduleMapper;
+import com.fazliddin.library.entity.Branch;
+import com.fazliddin.library.entity.BranchSchedule;
+import com.fazliddin.library.enums.WeekdaysNameEnum;
+import com.fazliddin.library.payload.ApiResult;
+import com.fazliddin.library.payload.CustomPage;
+import com.fazliddin.library.payload.req.BranchScheduleReqDto;
+import com.fazliddin.library.payload.resp.BranchScheduleRespDto;
+import com.fazliddin.library.repository.BranchRepository;
+import com.fazliddin.library.repository.BranchScheduleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -23,10 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author Murtazayev Muhammad
- * @since 23.01.2022
- */
+
 @Service
 @RequiredArgsConstructor
 public class BranchScheduleServiceImpl implements BranchScheduleService {
@@ -44,7 +41,7 @@ public class BranchScheduleServiceImpl implements BranchScheduleService {
     @Override
     public ApiResult<List<BranchScheduleRespDto>> getByBranch(Long branchId) {
         List<BranchSchedule> schedules = scheduleRepository.findAllByBranchId(branchId);
-        return ApiResult.successResponse(schedules.stream().map(scheduleMapper::toBranchScheduleRespDto).collect(Collectors.toList()));
+        return ApiResult.successResponse(schedules.stream().map((BranchSchedule schedule) -> scheduleMapper.toBranchScheduleRespDto(schedule)).collect(Collectors.toList()));
     }
 
     @Override

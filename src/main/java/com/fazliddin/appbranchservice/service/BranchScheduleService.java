@@ -1,18 +1,14 @@
 package com.fazliddin.appbranchservice.service;
 
-import ai.ecma.lib.entity.BranchSchedule;
-import ai.ecma.lib.payload.ApiResult;
-import ai.ecma.lib.payload.CustomPage;
-import ai.ecma.lib.payload.req.BranchScheduleReqDto;
-import ai.ecma.lib.payload.resp.BranchScheduleRespDto;
+import com.fazliddin.library.entity.BranchSchedule;
+import com.fazliddin.library.payload.ApiResult;
+import com.fazliddin.library.payload.CustomPage;
+import com.fazliddin.library.payload.req.BranchScheduleReqDto;
+import com.fazliddin.library.payload.resp.BranchScheduleRespDto;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
 
-/**
- * @author Murtazayev Muhammad
- * @since 23.01.2022
- */
 public interface BranchScheduleService {
 
     ApiResult<CustomPage<BranchScheduleRespDto>> get(Integer page, Integer size);

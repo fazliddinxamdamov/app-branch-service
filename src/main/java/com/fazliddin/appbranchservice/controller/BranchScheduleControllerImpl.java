@@ -1,19 +1,15 @@
 package com.fazliddin.appbranchservice.controller;
 
-import ai.ecma.appbranchservice.service.BranchScheduleService;
-import ai.ecma.lib.payload.ApiResult;
-import ai.ecma.lib.payload.CustomPage;
-import ai.ecma.lib.payload.req.BranchScheduleReqDto;
-import ai.ecma.lib.payload.resp.BranchScheduleRespDto;
+import com.fazliddin.appbranchservice.service.BranchScheduleService;
+import com.fazliddin.library.payload.ApiResult;
+import com.fazliddin.library.payload.CustomPage;
+import com.fazliddin.library.payload.req.BranchScheduleReqDto;
+import com.fazliddin.library.payload.resp.BranchScheduleRespDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * @author Murtazayev Muhammad
- * @since 23.01.2022
- */
 @RestController
 @RequiredArgsConstructor
 public class BranchScheduleControllerImpl implements BranchScheduleController {

@@ -1,17 +1,13 @@
 package com.fazliddin.appbranchservice.controller;
 
-import ai.ecma.appbranchservice.service.BranchService;
-import ai.ecma.lib.payload.ApiResult;
-import ai.ecma.lib.payload.CustomPage;
-import ai.ecma.lib.payload.req.BranchReqDto;
-import ai.ecma.lib.payload.resp.BranchRespDto;
+import com.fazliddin.appbranchservice.service.BranchService;
+import com.fazliddin.library.payload.ApiResult;
+import com.fazliddin.library.payload.CustomPage;
+import com.fazliddin.library.payload.req.BranchReqDto;
+import com.fazliddin.library.payload.resp.BranchRespDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author Murtazayev Muhammad
- * @since 22.01.2022
- */
 @RestController
 @RequiredArgsConstructor
 public class BranchControllerImpl implements BranchController {

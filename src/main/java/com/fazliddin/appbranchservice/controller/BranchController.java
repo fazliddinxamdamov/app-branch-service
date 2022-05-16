@@ -2,9 +2,15 @@ package com.fazliddin.appbranchservice.controller;
 
 import com.fazliddin.appbranchservice.utils.AppConstants;
 import com.fazliddin.library.payload.ApiResult;
+import com.fazliddin.library.payload.CustomPage;
+import com.fazliddin.library.payload.req.BranchReqDto;
+import com.fazliddin.library.payload.resp.BranchRespDto;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+
+import static com.fazliddin.appbranchservice.utils.AppConstants.DEFAULT_PAGE_NUMBER;
+import static com.fazliddin.appbranchservice.utils.AppConstants.DEFAULT_PAGE_SIZE;
 
 @RequestMapping(AppConstants.BASE_PATH + "/branch")
 public interface BranchController {

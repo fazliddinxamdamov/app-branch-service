@@ -1,19 +1,19 @@
 package com.fazliddin.appbranchservice.service;
 
-import ai.ecma.appbranchservice.common.MessageService;
-import ai.ecma.appbranchservice.exception.RestException;
-import ai.ecma.appbranchservice.mapper.BranchMapper;
-import ai.ecma.lib.entity.Address;
-import ai.ecma.lib.entity.Branch;
-import ai.ecma.lib.entity.District;
-import ai.ecma.lib.payload.ApiResult;
-import ai.ecma.lib.payload.CustomPage;
-import ai.ecma.lib.payload.req.BranchReqDto;
-import ai.ecma.lib.payload.resp.BranchRespDto;
-import ai.ecma.lib.repository.AddressRepository;
-import ai.ecma.lib.repository.BranchRepository;
-import ai.ecma.lib.repository.DistrictRepository;
-import ai.ecma.lib.service.CommonService;
+import com.fazliddin.appbranchservice.common.MessageService;
+import com.fazliddin.appbranchservice.exception.RestException;
+import com.fazliddin.appbranchservice.mapper.BranchMapper;
+import com.fazliddin.library.entity.Address;
+import com.fazliddin.library.entity.Branch;
+import com.fazliddin.library.entity.District;
+import com.fazliddin.library.payload.ApiResult;
+import com.fazliddin.library.payload.CustomPage;
+import com.fazliddin.library.payload.req.BranchReqDto;
+import com.fazliddin.library.payload.resp.BranchRespDto;
+import com.fazliddin.library.repository.AddressRepository;
+import com.fazliddin.library.repository.BranchRepository;
+import com.fazliddin.library.repository.DistrictRepository;
+import com.fazliddin.library.services.CommonServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -26,10 +26,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-/**
- * @author Murtazayev Muhammad
- * @since 22.01.2022
- */
 @Service
 @RequiredArgsConstructor
 public class BranchServiceImpl implements BranchService {
@@ -66,7 +62,7 @@ public class BranchServiceImpl implements BranchService {
 //        List<Branch> nearlyBranches = branches.stream().filter(branch -> CommonService.distance(lat, lon, branch.getAddress().getLat(), branch.getAddress().getLon()) <= branch.getMaxDeliveryDistance()).collect(Collectors.toList());
 
         for (Branch branch : branches) {
-            if (CommonService.distance(lat, lon, branch.getAddress().getLat(), branch.getAddress().getLon()) <= branch.getMaxDeliveryDistance()){
+            if (CommonServices.distance(lat, lon, branch.getAddress().getLat(), branch.getAddress().getLon()) <= branch.getMaxDeliveryDistance()){
                 nearlyBranches.add(branch);
             }
         }
@@ -76,8 +72,8 @@ public class BranchServiceImpl implements BranchService {
             if (Objects.isNull(nearlyBranch)) {
                 nearlyBranch = branch;
             } else {
-                double distance = CommonService.distance(lat, lon, branch.getAddress().getLat(), branch.getAddress().getLon());
-                double nearlyDistance = CommonService.distance(lat, lon, nearlyBranch.getAddress().getLat(), nearlyBranch.getAddress().getLon());
+                double distance = CommonServices.distance(lat, lon, branch.getAddress().getLat(), branch.getAddress().getLon());
+                double nearlyDistance = CommonServices.distance(lat, lon, nearlyBranch.getAddress().getLat(), nearlyBranch.getAddress().getLon());
                 if (distance <= nearlyDistance) {
                     nearlyBranch = branch;
                 }

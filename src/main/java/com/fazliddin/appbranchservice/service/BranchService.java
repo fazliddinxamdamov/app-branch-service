@@ -1,10 +1,11 @@
 package com.fazliddin.appbranchservice.service;
 
-import ai.ecma.lib.entity.Branch;
-import ai.ecma.lib.payload.ApiResult;
-import ai.ecma.lib.payload.CustomPage;
-import ai.ecma.lib.payload.req.BranchReqDto;
-import ai.ecma.lib.payload.resp.BranchRespDto;
+
+import com.fazliddin.library.entity.Branch;
+import com.fazliddin.library.payload.ApiResult;
+import com.fazliddin.library.payload.CustomPage;
+import com.fazliddin.library.payload.req.BranchReqDto;
+import com.fazliddin.library.payload.resp.BranchRespDto;
 import org.springframework.data.domain.Page;
 
 /**

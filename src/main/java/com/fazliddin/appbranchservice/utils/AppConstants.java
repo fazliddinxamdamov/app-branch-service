@@ -5,9 +5,10 @@ package com.fazliddin.appbranchservice.utils;
  * @date 30.04.2022  08:48
  * @project app-fast-food
  */
-public class AppConstants {
+public interface AppConstants {
 
-    public static final String BASE_PATH = "/api/branch";
-//    String BASE_PATH = "/api/branch";
+    String BASE_PATH = "/api/branch";
+    String DEFAULT_PAGE_NUMBER = "0";
+    String DEFAULT_PAGE_SIZE = "20";
 
 }

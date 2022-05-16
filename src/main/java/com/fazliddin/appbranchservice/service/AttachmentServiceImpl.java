@@ -1,13 +1,13 @@
 package com.fazliddin.appbranchservice.service;
 
-import ai.ecma.appbranchservice.common.MessageService;
-import ai.ecma.appbranchservice.exception.RestException;
-import ai.ecma.appbranchservice.payload.ResponseFileDto;
-import ai.ecma.lib.entity.Attachment;
-import ai.ecma.lib.entity.AttachmentContent;
-import ai.ecma.lib.payload.ApiResult;
-import ai.ecma.lib.repository.AttachmentContentRepository;
-import ai.ecma.lib.repository.AttachmentRepository;
+import com.fazliddin.appbranchservice.common.MessageService;
+import com.fazliddin.appbranchservice.exception.RestException;
+import com.fazliddin.appbranchservice.payload.ResponseFileDto;
+import com.fazliddin.library.entity.Attachment;
+import com.fazliddin.library.entity.AttachmentContent;
+import com.fazliddin.library.payload.ApiResult;
+import com.fazliddin.library.repository.AttachmentContentRepository;
+import com.fazliddin.library.repository.AttachmentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;

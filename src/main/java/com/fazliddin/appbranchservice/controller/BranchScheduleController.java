@@ -1,20 +1,17 @@
 package com.fazliddin.appbranchservice.controller;
 
-import ai.ecma.lib.payload.ApiResult;
-import ai.ecma.lib.payload.CustomPage;
-import ai.ecma.lib.payload.req.BranchScheduleReqDto;
-import ai.ecma.lib.payload.resp.BranchScheduleRespDto;
+import com.fazliddin.library.payload.ApiResult;
+import com.fazliddin.library.payload.CustomPage;
+import com.fazliddin.library.payload.req.BranchScheduleReqDto;
+import com.fazliddin.library.payload.resp.BranchScheduleRespDto;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
-import static ai.ecma.appbranchservice.utils.AppConstant.*;
+import static com.fazliddin.appbranchservice.utils.AppConstants.*;
 
-/**
- * @author Murtazayev Muhammad
- * @since 22.01.2022
- */
+
 @RequestMapping(BranchScheduleController.BRANCH_SCHEDULE_CONTROLLER)
 public interface BranchScheduleController {
     String BRANCH_SCHEDULE_CONTROLLER = BASE_PATH + "/branch-schedule";
